@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test Class</title>
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <style>
+            .div1{
+                width:200px;
+                height:300px;
+                border:2px solid red;
+            }
+            .btn1{
+                color:orange;
+                background-color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="mydiv1">My Div 1</div>
+        <div id="mydiv2">My Div 2</div>
+        <div id="mydiv3">My Div 3</div>
+        <button id="addbutton">ADD</button>
+        <button id="removebutton">Remove</button>
+        <button id="togglebtn">Toggle</button>
+        <script>
+            $(document).ready(function(){
+                $("#addbutton").click(function(){
+                    $("#mydiv1").addClass("div1");
+                });
+                $("#removebutton").click(function(){
+                    $("#mydiv1").removeClass("div1");
+                });
+                $("#togglebtn").click(function(){
+                    $("#mydiv3").toggleClass("div1");
+                })
+                $("#addbutton").mouseover(function(){
+                    $("#addbutton").addClass("btn1");
+                })
+                $("#addbutton").mouseout(function(){
+                    $("#addbutton").removeClass("btn1")
+                })
+            })
+        </script>
+    </body>
+</html>

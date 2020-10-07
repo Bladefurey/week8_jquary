@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<style>
+.menu{
+    border-radius:5px;
+    width:185px;
+}
+.menu ul {
+    margin: 0; 
+    padding: 0;
+    list-style-type: none;
+    
+}
+.menu ul li a {
+    text-decoration: none;
+    color: #fff; 
+    padding: 10px 11px;
+    background-color: #8E5874;
+    display:block;
+    border-bottom:solid 1px #000;
+}
+.menu ul li a:visited {
+    color: white;
+}
+.menu ul li a:hover {
+    color: #000;
+    background-color: #B1C7D6;
+}
+.left{
+    float:left;
+}
+.wid{
+    margin: 0; 
+    padding: 0;
+    width: 100%;
+    list-style-type: none;
+}
+.cle{
+    clear:left;
+}
+</style>
+</head>
+
+<body>
+    <h1>jQuery fadeIn </h1>
+    <button id="row">ROW</button>
+    <button id="col">COL</button>
+    <br><br>
+    <div class="menu">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Activities</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+    <p id="but">
+        <button class="fademet">Run FadeIn</button>
+    </p>
+    <script>
+        $(document).ready(function(){
+            $("#row").click(function(){
+                $(".menu").addClass("wid");
+                $("li").addClass("left");
+                $("#but").addClass("cle")
+            })
+            $("#col").click(function(){
+                $("li").removeClass("left");
+                $(".menu").removeClass("wid");
+                $("#but").removeClass("cle")
+            })
+        })
+    </script>
+</body>
+</html>

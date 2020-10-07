@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Test Jquery</title>
+        <script src="../js/jquery-3.5.1.min.js"></script>
+    </head>
+    <body>
+        <div id="mydiv1">
+            My Div
+            <p>This is Paragraph 1.</p>
+        </div><br>
+        <div id="mydiv2">
+            My Div
+            <p>This is Paragraph 2.</p>
+        </div><br>
+        <div id="mydiv3">
+            My Div
+            <p>This is Paragraph 3.</p>
+        </div><br>
+        <button id="mybutton" name="sumbit" value="sumbit">sumbit</button>
+        <script>
+            $(document).ready(function(){
+                $("#mybutton").click(function(){
+                    $("#mydiv1").css("background-color","red");
+                    $("div").css("color","white");
+                    $("div p").css("background-color","orange");
+                    //usage of eq
+                    $("div").eq(1).css("background-color","yellow");
+                    //usage of nth-child
+                    $("div").eq(2).css("background-color","blue");
+                })
+            })
+        </script>
+    </body>
+</html>

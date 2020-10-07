@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+    <ul id="todolist">
+    </ul>
+    <input type="date" value="date" id="date">
+    <input type="text" id="txt" >
+    <input type="submit" name="submit" id="submit">
+    <script>
+        $(document).ready(function(){
+            $("#submit").click(function(){
+                var newdate=$("#date").val();
+                var newtodolist=$("#txt").val();
+                $("#todolist").prepend( "<check>"+"<li>"+newdate +"&nbsp &nbsp"+  newtodolist+ "</li>");
+                $("#txt");
+            })
+        })
+    </script>
+</body>
+</html>

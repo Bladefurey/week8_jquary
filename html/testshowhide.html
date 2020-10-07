@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Test Class</title>
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        
+    </head>
+    <body>
+        <div id="mydiv1">My Div 1</div>
+        <div id="mydiv2">My Div 2</div>
+        <div id="mydiv3">My Div 3</div>
+        <button id="show">Show</button>
+        <button id="hide">Hide</button>
+        <script>
+            $(document).ready(function(){
+                $("#mydiv1,#mydiv2,#mydiv3").hide();
+                $("#show").click(function(){
+                    $("#mydiv1").show("slow");
+                    $("#mydiv2").show("normal");
+                    $("#mydiv3").show("fast");
+                })
+                $("#hide").click(function(){
+                    $("#mydiv1").hide("slow",showalert)
+                })
+                function showalert(){
+                    alert("hello");
+                }
+            })
+        </script>
+    </body>
+</html>

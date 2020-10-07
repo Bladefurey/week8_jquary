@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Test Change</title>
+        <script src="../js/jquery-3.5.1.min.js"></script>
+    </head>
+    <body>
+        <form id="reg">
+            <input type="text" name="username" id="usname" placeholder="Enter Username">
+            <input type="email" name="email" id="email" placeholder="Enter Email">
+            <input type="password" name="password" id="password" placeholder="Enter Password">
+            <input type="radio" name="gender" value="male" id="male" checked>male
+            <input type="radio" name="gender" value="female" id="female">female
+            <select id="city">
+                <option value="mandalay">Mandalay</option>
+                <option value="yangon">Yangon</option>
+                <option value="naypyitaw">Naypyitay</option>
+            </select>
+            <button type="submit" name="submit" value="submit" id="submit">Register</button>
+        </form>
+        <div id="mydiv" style="border:10px solid green;width:200px;height:100px;">
+            hello
+        </div>
+        <script>
+            $(document).ready(function(){
+                $("#sumbit").click(function(){
+                    var gender=$('input[name="gender"]:checked').val();
+                    alert(`Gender is ${gender}`);
+                })
+                $('input[name="gender"]').change(function(){
+                    var gender=$('input[name="gender"]:checked').val();
+                    alert(`Gender is ${gender}`);
+                })
+                $("#city").change(function(){
+                    var city=$("#city").val();
+                    alert(`City is ${city}`);
+                })
+                $("#usname").change(function(){
+                    alert("Username is "+ $("#usname").val());
+                })
+                $("#reg").sumbit(function(event){
+                    alert("Username is "+$("#usname").val());
+                    event.preventDefult();
+                })
+                $("#mydiv").append("<p><h2>This is append</h2></p>");
+                $("#mydiv").prepend("<p>This is prepend</p>");
+                $("#mydiv").before("<p>before Div</p>");
+                $("#mydiv").after("<p>After Div</p>")
+            })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Test Animate</title>
+        <script src="../js/jquery-3.5.1.min.js"></script>
+        <style>
+        </style>
+    </head>
+    <body>
+        <div id="imgs">
+            <img id="myimg" src="../image/759490.jpg" width=125px height=100px style="position:relative; left:10px;">      
+        </div>
+        <div id="mydiv">
+        </div>
+        <div style="position: absolute;top:200px;">
+            <input type="radio" name="speed" value="fast" checked>Fast
+            <input type="radio" name="speed" value="normal">Normal 
+            <input type="radio" name="speed" value="slow">Slow
+        </div>
+        <div>
+            <select id="speed_rate" style="position:absolute; top:180px;">
+                <option value="500">500ms</option>
+                <option value="1000">1000ms</option>
+                <option value="2000">2000ms</option>
+                <option value="4000">4000ms</option>
+                <option value="8000">8000ms</option>
+            </select>
+        </div>
+        <button type="button" id="mybtn" style="position:absolute;top:250px;">Run</button>
+        <script>
+            $(document).ready(function(){
+                $("#mybtn").click(function(){
+                    var speed=$('input[name="speed"]:checked').val();
+                    var speed_rate=$("#speed_rate").val();
+                    console.log(parseInt(speed_rate));
+                    if(speed=="fast"){
+                        $("#myimg").animate({
+                        opacity: 0.25,
+                        left: "+=50",
+                        height: "toggle"
+                    },parseInt(speed_rate),function(){
+                        alert("hello world");
+                    })
+                    }
+                    else if(speed=="normal"){
+                        $("#myimg").animate({
+                        opacity: 0.25,
+                        left: "+=50",
+                        height: "toggle"
+                    },2000,function(){
+                        alert("hello world");
+                    })
+                    }
+                    else if(speed=="slow"){
+                        $("#myimg").animate({
+                        opacity: 0.25,
+                        left: "+=50",
+                        height: "toggle"
+                    },5000,function(){
+                        alert("hello world");
+                    })
+                    }
+                })
+            })
+        </script>
+    </body>
+</html>
